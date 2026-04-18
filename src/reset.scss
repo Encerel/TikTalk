@@ -1,0 +1,22 @@
+/* Predictable sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Minimal global reset */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep form controls consistent with app typography */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}

@@ -2,15 +2,15 @@
 
   <div class="profile-card">
     <div class="avatar-name">
-      <img src="/assets/img/avatar-rayan.png" alt="avatar" class="profile-card__avatar">
+      <img [src]="profile.avatarUrl | imageUrl" alt="avatar" class="profile-card__avatar">
       <div class="profile-card__name">
         <strong class="h6">{{ profile.firstName }} {{ profile.lastName }}</strong>
-        <span class="subtitle">{{ profile.username}}</span>
+        <span class="subtitle">{{ profile.username }}</span>
       </div>
     </div>
 
     <div class="profile-card__description">
-      {{ profile.description}}
+      {{ profile.description }}
     </div>
 
 

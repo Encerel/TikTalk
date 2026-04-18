@@ -1,0 +1,23 @@
+.sidebar-wrapper {
+  width: 300px;
+  height: 900px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-logo {
+  height: 74px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 0 12px;
+}
+
+sidebar-nav__item {
+  padding: 8px 16px 8px 16px;
+}
