@@ -1,7 +1,40 @@
-<div class="profile-card__wrapper">
-  @for (profile of profiles; track profile.id) {
-    <app-profile-card
-      [profile]="profile">
-    </app-profile-card>
-  }
+<div class="search-page">
+  <div class="search-page__bg-main"></div>
+  <div class="search-page__bg-tiles"></div>
+
+  <div class="search-page__content">
+    <section class="search-toolbar">
+      <div class="search-toolbar__content">
+        <div class="search-toolbar__input">
+          <div class="search-toolbar__tags">
+            <span class="search-tag"><span class="search-tag__close">×</span>JS</span>
+            <span class="search-tag"><span class="search-tag__close">×</span>CSS</span>
+          </div>
+          <button type="button" class="search-toolbar__icon-btn" aria-label="Найти">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M10 4a6 6 0 1 1-4.24 10.24A6 6 0 0 1 10 4Zm0-2a8 8 0 1 0 4.9 14.32l4.39 4.38 1.41-1.41-4.38-4.39A8 8 0 0 0 10 2Z"/>
+            </svg>
+          </button>
+        </div>
+
+        <button type="button" class="search-toolbar__filter-btn" aria-label="Фильтры">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 5h16l-6.5 7.5V19l-3-1.8v-4.7L4 5Z"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="search-results">
+      @for (profile of profiles; track profile.id; let i = $index) {
+        <app-profile-card
+          [profile]="profile"
+          [actionType]="i === 0 ? 'message' : 'subscribe'"
+          [showInvite]="i === 0">
+        </app-profile-card>
+      }
+    </section>
+  </div>
+
+  <div class="search-page__overlay"></div>
 </div>
