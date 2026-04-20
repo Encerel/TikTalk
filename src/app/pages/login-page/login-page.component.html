@@ -1,13 +1,64 @@
-<form class="login-form">
+﻿<form class="login-form">
   <h1 class="h1">Вход</h1>
   <label class="tt-control-label mb16">
     Telegram username
-    <input type="text" placeholder="Введите логин" class="tt-input">
+    <span class="tt-input-icon-wrap">
+      <input type="text" placeholder="Введите логин" class="tt-input tt-input-with-icon">
+      <img src="/assets/svg/tg-icon.svg" class="tg-icon" alt="Telegram icon">
+    </span>
   </label>
-  <label class="tt-control-label mb32">
+
+  <label class="tt-control-label tt-control-label--medium mb32">
     Пароль
-    <input type="password" placeholder="Введите пароль" class="tt-input">
+    <span class="tt-input-icon-wrap">
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="Введите пароль"
+        class="tt-input tt-input-with-icon"
+      >
+      <button
+        type="button"
+        class="password-toggle"
+        [attr.aria-label]="showPassword ? 'Скрыть пароль' : 'Показать пароль'"
+        (click)="togglePasswordVisibility()"
+      >
+        <svg
+          class="password-icon"
+          [class.is-hidden]="showPassword"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M3 3L21 21M10.58 10.58C10.21 10.95 10 11.46 10 12C10 13.1 10.9 14 12 14C12.54 14 13.05 13.79 13.42 13.42M9.88 5.09C10.56 4.91 11.27 4.81 12 4.81C17 4.81 20.27 9.11 21 12C20.73 13.08 20.16 14.33 19.31 15.45M6.61 6.61C4.62 8.04 3.36 10.02 3 12C3.73 14.89 7 19.19 12 19.19C13.95 19.19 15.65 18.53 17.08 17.52"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <svg
+          class="password-icon"
+          [class.is-hidden]="!showPassword"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M2.5 12C3.77 8.06 7.53 5.19 12 5.19C16.47 5.19 20.23 8.06 21.5 12C20.23 15.94 16.47 18.81 12 18.81C7.53 18.81 3.77 15.94 2.5 12Z"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8" />
+        </svg>
+      </button>
+    </span>
   </label>
-  <button class="btn .btn-shadow">Войти</button>
+
+  <button class="btn">Войти</button>
 </form>
 <img src="/assets/svg/logo-big.svg" alt="login-bg">

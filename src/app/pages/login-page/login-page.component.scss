@@ -1,8 +1,65 @@
-:host {
+﻿:host {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100dvh;
   align-items: center;
-  margin: 0 5%
+  margin: 0 5%;
 }
 
+.login-form {
+  width: 440px;
+}
+
+.tt-control-label--medium {
+  font-weight: 500;
+}
+
+.tt-input-icon-wrap {
+  display: block;
+  position: relative;
+  margin-top: 8px;
+}
+
+.tt-input-icon-wrap .tt-input {
+  margin-top: 0;
+}
+
+.tt-input-with-icon {
+  padding-right: 52px;
+}
+
+.tg-icon,
+.password-toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.tg-icon {
+  pointer-events: none;
+}
+
+.password-toggle {
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.password-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.is-hidden {
+  display: none;
+}
