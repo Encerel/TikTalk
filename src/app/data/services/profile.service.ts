@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Profile } from '../interfaces/profile.interface';
+import { BASE_URL } from '../../helpers/routes/api-routes';
 
 @Injectable({
   providedIn: 'root',
@@ -8,9 +9,7 @@ import { Profile } from '../interfaces/profile.interface';
 export class ProfileService {
   http = inject(HttpClient);
 
-  baseAPIUrl = 'https://icherniakov.ru/yt-course/';
-
   getTestAccounts() {
-    return this.http.get<Profile[]>(`${this.baseAPIUrl}account/test_accounts`);
+    return this.http.get<Profile[]>(`${BASE_URL}/account/test_accounts`);
   }
 }
